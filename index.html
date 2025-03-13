@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y Seguimiento</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #e6e6e6;
+            color: #2c3e50;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            width: 40px;
+            height: 30px;
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #c58bfc;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            background: rgb(255, 255, 255);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            transition: transform 0.3s;
+        }
+
+        h2 {
+            color: #000000;
+            border-bottom: 4px solid #9b51e0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #000000;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Formulario */
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-between;
+        }
+
+        .form-column {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        select {
+            width: 90%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #9b51e0;
+            outline: none;
+        }
+
+        /* Ajustes específicos para textarea */
+        textarea {
+            margin-top: 1%;
+            width: 85%;
+            height: 30%;
+            resize: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+
+        button {
+            display: block;
+            width: 20%;
+            padding: 15px;
+            background: #9b51e0;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #8432c6;
+        }
+
+        /* Tabla de seguimiento */
+        .filters {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td {
+            font-weight: 500;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        tbody tr:hover {
+            background: #f0f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="./img/logoIzq.png" alt="Logo de la empresa">
+            </a>
+        </div>
+        <nav>
+            <a href="#formulario">Formulario</a>
+            <a href="#seguimiento">Seguimiento</a>
+        </nav>
+    </header>
+    <main>
+        <section id="formulario">
+            <h2>FORMULARIO DE REGISTRO</h2>
+            <form class="form-container">
+                <div class="form-column">
+                    <h3>Datos Demográficos</h3>
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo... ">
+                    <label for="documento">Número de documento</label>
+                    <input type="text" id="documento" name="documento" placeholder="Número documento...">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad...">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono...">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Correo electronico...">
+                </div>
+                <div class="form-column">
+                    <h3>Información Adicional</h3>
+                    <label for="productos">Productos que usa</label>
+                    <select id="productos" name="productos">
+                        <option disabled value="">Seleccione una opción</option>
+                        <option value="">Productos para bebés de 0 a 3 años</option>
+                        <option value="">Medicamentos de venta libre</option>
+                        <option value="">Suplementos vitamínicos </option>
+                        <option value="">Productos para el cuidado de adultos mayores</option>
+                        <option value="">Cuidados personales</option>
+                        <option value="">Alimentos saludables</option>
+                        <option value="">Bebidas no alcohólicas</option>
+                        <option value="">Bebidas alcohólicas</option>
+                        <option value="">Alimentos procesados</option>
+                        <option value="">Snacks</option>
+                        <option value="">Otros alimentos</option>
+                        <option value="">Productos dermatológicos</option>
+                        <option value="">Productos financieros y métodos de pago</option>
+                        <option value="">Productos de Streaming</option>
+                        <option value="">Productos de aseo para el hogar</option>
+                    </select>
+                    <label for="frecuencia">Frecuencia de uso</label>
+                    <select id="frecuencia" name="frecuencia">
+                        <option disabled value="">Seleccione una opción</option>
+                        <option value="">Diario</option>
+                        <option value="">Semanal</option>
+                        <option value="">Mensual</option>
+                    </select>
+                    <label for="comentarios">Comentarios</label>
+                    <textarea name="text-area" id="comentarios" placeholder="Escribe un comentario..."></textarea>
+                </div>
+            </form>
+            <button type="submit">Registrar Participante</button>
+        </section>
+
+        <section id="seguimiento">
+            <h2>SEGUIMIENTO DE PARTICIPANTES</h2>
+            <div class="filters">
+                <div>
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado">
+                        <option value="">Todos</option>
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                        <option value="pendiente">Pendiente</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="proyecto">Proyecto</label>
+                    <select id="proyecto" name="proyecto">
+                        <option value="">Todos</option>
+                        <option value="proy1">Proyecto Alpha</option>
+                        <option value="proy2">Proyecto Beta</option>
+                        <option value="proy3">Proyecto Gamma</option>
+                    </select>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Estado</th>
+                        <th>Fecha de Registro</th>
+                        <th>Proyecto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>David Pabón</td>
+                        <td>3105557890</td>
+                        <td>pabonear@gmail.com</td>
+                        <td>P_PACIENTE_FALLECIDO</td>
+                        <td>12/11/2024</td>
+                        <td>DOLOR COL AM (40)</td>
+                    </tr>
+                    <tr>
+                        <td>Juan Bacca</td>
+                        <td>3125545891</td>
+                        <td>juan12z@gmail.com</td>
+                        <td>NO_CONTESTA</td>
+                        <td>05/04/2025</td>
+                        <td>T4E0 (46)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
