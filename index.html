@@ -30,11 +30,11 @@
                 <label for="proyectos">Filtrar por proyectos</label>
                 <select id="proyectos" name="proyectos">
                     <option value="">NINGUNO</option>
-                    <option value="proy1">DERMA PROTECT AD (32)</option>
-                    <option value="proy2">DOLOR COL AM (40)</option>
-                    <option value="proy3">GRIPA NN (2)</option>
-                    <option value="proy4">T4E0 (46)</option>
-                    <option value="proy5">T4E5 S (23)</option>
+                    <option value="form1">DERMA PROTECT AD (32)</option>
+                    <option value="form2">DOLOR COL AM (40)</option>
+                    <option value="form3">GRIPA NN (2)</option>
+                    <option value="form4">T4E0 (46)</option>
+                    <option value="form5">T4E5 S (23)</option>
 
                 </select>
             </div>
@@ -49,8 +49,75 @@
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
                         <div class="accordion-body">
-                            <section id="formulario">
-                                <h2>FORMULARIO DE REGISTRO</h2>
+                            <!-- Formulario DERMA PROTECT AD (32)  -->
+                            <section id="form1" class="formulario-proyecto">
+                                <h2>FORMULARIO DE REGISTRO Derma</h2>
+                                <form class="form-container">
+                                    <div class="form-column">
+                                        <h3>Datos Demográficos</h3>
+                                        <label for="nombre">Nombre completo</label>
+                                        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo... ">
+                                        <label for="documento">Número de documento</label>
+                                        <input type="text" id="documento" name="documento" placeholder="Número documento...">
+                                        <label for="edad">Edad</label>
+                                        <input type="text" id="edad" name="edad" placeholder="Edad...">
+                                        <label for="genero">Género</label>
+                                        <input type="genero" id="genero" name="genero" placeholder="Género...">
+                                        <label for="direccion">Dirección</label>
+                                        <input type="direccion" id="direccion" name="direccion" placeholder="Dirección...">
+                                        <label for="barrio">Barrio</label>
+                                        <input type="barrio" id="barrio" name="barrio" placeholder="Barrio...">
+                                        <label for="nse">NSE</label>
+                                        <input type="nse" id="nse" name="nse" placeholder="NSE...">
+                                        <label for="telefono">Teléfono</label>
+                                        <input type="telefono1" id="telefono1" name="telefono1" placeholder="Teléfono...">
+                                        <input type="telefono2" id="telefono2" name="telefono2" placeholder="Teléfono...">
+                                        <label for="partedol">Parte del cuerpo que presenta dolor</label>
+                                        <input type="partedol" id="partedol" name="partedol" placeholder="Parte...">
+                                        <label for="marcaus">Marca usuaria</label>
+                                        <input type="marcaus" id="marcaus" name="marcaus" placeholder="Marca usuaria...">
+                                        <label for="presentacion">Presentación</label>
+                                        <input type="presentacion" id="presentacion" name="presentacion" placeholder="Presentación...">
+                                        <label for="frecuenciaepi">Frecuencia de espisodios presentados en la semana</label>
+                                        <input type="frecuenciaepi" id="frecuenciaepi" name="frecuenciaepi" placeholder="Frecuencia...">
+                                    </div>
+                                    <div class="form-column">
+                                        <h3>Información Adicional</h3>
+                                        <label for="productos">Productos que usa</label>
+                                        <select id="productos" name="productos">
+                                            <option disabled value="">Seleccione una opción</option>
+                                            <option value="">Productos para bebés de 0 a 3 años</option>
+                                            <option value="">Medicamentos de venta libre</option>
+                                            <option value="">Suplementos vitamínicos </option>
+                                            <option value="">Productos para el cuidado de adultos mayores</option>
+                                            <option value="">Cuidados personales</option>
+                                            <option value="">Alimentos saludables</option>
+                                            <option value="">Bebidas no alcohólicas</option>
+                                            <option value="">Bebidas alcohólicas</option>
+                                            <option value="">Alimentos procesados</option>
+                                            <option value="">Snacks</option>
+                                            <option value="">Otros alimentos</option>
+                                            <option value="">Productos dermatológicos</option>
+                                            <option value="">Productos financieros y métodos de pago</option>
+                                            <option value="">Productos de Streaming</option>
+                                            <option value="">Productos de aseo para el hogar</option>
+                                        </select>
+                                        <label for="frecuencia">Frecuencia de uso</label>
+                                        <select id="frecuencia" name="frecuencia">
+                                            <option disabled value="">Seleccione una opción</option>
+                                            <option value="">Diario</option>
+                                            <option value="">Semanal</option>
+                                            <option value="">Mensual</option>
+                                        </select>
+                                        <label for="comentarios">Comentarios</label>
+                                        <textarea name="text-area" id="comentarios" placeholder="Escribe un comentario..."></textarea>
+                                    </div>
+                                </form>
+                                <button type="submit">Registrar Participante</button>
+                            </section>
+                        <!-- Formulario DOLOR COL AM (40)  -->
+                            <section id="form2" class="formulario-proyecto">
+                                <h2>FORMULARIO DE REGISTRO Dolor col am</h2>
                                 <form class="form-container">
                                     <div class="form-column">
                                         <h3>Datos Demográficos</h3>
@@ -239,6 +306,7 @@
             const selectProyectos = document.getElementById("proyectos");
             const accordionButtons = document.querySelectorAll(".accordion-button");
             const accordionItems = document.querySelectorAll(".accordion-collapse");
+            const formularios = document.querySelectorAll(".formulario-proyecto");
     
             // Deshabilitar botones del acordeón al inicio
             function toggleAccordionButtons(enable) {
@@ -264,10 +332,20 @@
                     closeAccordions(); // Cierra los acordeones abiertos
                 }
             });
+
+            selectProyectos.addEventListener("change", function () {
+                // Ocultar todos los formularios
+                formularios.forEach(form => form.style.display = "none");
+
+                // Obtener el formulario seleccionado y mostrarlo
+                const selectedForm = document.getElementById(this.value);
+                if (selectedForm) {
+                    selectedForm.style.display = "block";
+                }
+            });
         });
 
         
-
     </script>
 </body>
 </html>
