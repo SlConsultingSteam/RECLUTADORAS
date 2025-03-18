@@ -23,6 +23,14 @@ header {
   margin-left: 20px;
 }
 
+.piezareclu img {
+  width: 481px;
+  height: 651px;
+  margin-top: 5px;
+  margin-left: 20px;
+
+}
+
 nav a {
   color: white;
   text-decoration: none;
@@ -128,7 +136,24 @@ button {
   transition: background 0.3s;
 }
 
-button:hover {
+
+
+.buttona {
+  display: block;
+  width: 17%;
+  padding: 15px;
+  background: #9b51e0;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.buttona:hover {
   background: #8432c6;
 }
 
@@ -177,4 +202,40 @@ tbody tr:hover {
   .filters {
     flex-direction: column;
   }
+}
+
+/* Cambiar el color de fondo cuando se hace clic (estado :active) */
+.accordion-button:active,
+.accordion-button:focus {
+    background-color: #6f42c1 !important; /* Morado */
+    color: white !important; /* Texto en blanco */
+    box-shadow: none !important; /* Eliminar el sombreado predeterminado de Bootstrap */
+    outline: none !important; /* Eliminar el outline predeterminado */
+}
+
+/* Cambiar el color de fondo cuando el acordeón está abierto */
+.accordion-button:not(.collapsed) {
+    background-color: #6f42c1; /* Morado */
+    color: white; /* Texto en blanco */
+}
+
+
+/* Cambiar el color de fondo al hacer hover */
+.accordion-button:hover {
+    background-color: #8432c6; /* Morado claro */
+    color: white;
+}
+
+/* Cambiar el color del borde del acordeón */
+.accordion-item {
+    border-color: #6f42c1; /* Morado */
+}
+
+/* Quitar bordes del acordeón */
+.accordion {
+  border: none !important; /* Elimina el borde del contenedor del acordeón */
+}
+
+.accordion-item {
+  border: none !important; /* Elimina el borde de cada ítem del acordeón */
 }
