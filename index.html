@@ -117,7 +117,7 @@
                             </section>
                         <!-- Formulario DOLOR COL AM (40)  -->
                             <section id="form2" class="formulario-proyecto">
-                                <h2>FORMULARIO DE REGISTRO Dolor col am</h2>
+                                <h2>FORMULARIO DE REGISTRO DOLOR COL AM (40)</h2>
                                 <form class="form-container">
                                     <div class="form-column">
                                         <h3>Datos Demográficos</h3>
@@ -149,32 +149,9 @@
                                     </div>
                                     <div class="form-column">
                                         <h3>Información Adicional</h3>
-                                        <label for="productos">Productos que usa</label>
-                                        <select id="productos" name="productos">
-                                            <option disabled value="">Seleccione una opción</option>
-                                            <option value="">Productos para bebés de 0 a 3 años</option>
-                                            <option value="">Medicamentos de venta libre</option>
-                                            <option value="">Suplementos vitamínicos </option>
-                                            <option value="">Productos para el cuidado de adultos mayores</option>
-                                            <option value="">Cuidados personales</option>
-                                            <option value="">Alimentos saludables</option>
-                                            <option value="">Bebidas no alcohólicas</option>
-                                            <option value="">Bebidas alcohólicas</option>
-                                            <option value="">Alimentos procesados</option>
-                                            <option value="">Snacks</option>
-                                            <option value="">Otros alimentos</option>
-                                            <option value="">Productos dermatológicos</option>
-                                            <option value="">Productos financieros y métodos de pago</option>
-                                            <option value="">Productos de Streaming</option>
-                                            <option value="">Productos de aseo para el hogar</option>
-                                        </select>
-                                        <label for="frecuencia">Frecuencia de uso</label>
-                                        <select id="frecuencia" name="frecuencia">
-                                            <option disabled value="">Seleccione una opción</option>
-                                            <option value="">Diario</option>
-                                            <option value="">Semanal</option>
-                                            <option value="">Mensual</option>
-                                        </select>
+                                        <label class="form-label">¿Qué otros productos usa?</label>
+                                        <div id="checkbox-container"></div>
+
                                         <label for="comentarios">Comentarios</label>
                                         <textarea name="text-area" id="comentarios" placeholder="Escribe un comentario..."></textarea>
                                     </div>
@@ -345,6 +322,32 @@
             });
         });
 
+        /* Información Adicional DOLOR COL AM 40  */
+        const productos = [
+        { value: "suplementos", label: "Suplementos vitamínicos" },
+        { value: "adultos_mayores", label: "Productos para el cuidado de adultos mayores" },
+        { value: "cuidados_personales", label: "Cuidados personales" },
+        { value: "alimentos_saludables", label: "Alimentos saludables" },
+        { value: "bebidas_no_alcoholicas", label: "Bebidas no alcohólicas" },
+        { value: "bebidas_alcoholicas", label: "Bebidas alcohólicas" },
+        { value: "alimentos_procesados", label: "Alimentos procesados" },
+        { value: "snacks", label: "Snacks" },
+        { value: "otros_alimentos", label: "Otros alimentos" },
+        { value: "dermatologicos", label: "Productos dermatológicos" },
+        { value: "financieros", label: "Productos financieros y métodos de pago" },
+        { value: "streaming", label: "Productos de Streaming" },
+        { value: "aseo_hogar", label: "Productos de aseo para el hogar" }
+        ];
+
+        const container = document.getElementById("checkbox-container");
+        productos.forEach((producto, index) => {
+            container.innerHTML += `
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="productos" value="${producto.value}" id="producto-${index}">
+                    <label class="form-check-label" for="producto-${index}">${producto.label}</label>
+                </div>
+            `;
+        });
         
     </script>
 </body>
