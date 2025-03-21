@@ -111,9 +111,8 @@ textarea:focus {
 
 /* Ajustes específicos para textarea */
 textarea {
-  margin-top: 1%;
-  width: 85%;
-  height: 30%;
+  width: 90%;
+  height: 130px;
   resize: none;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -238,4 +237,16 @@ tbody tr:hover {
 
 .accordion-item {
   border: none !important; /* Elimina el borde de cada ítem del acordeón */
+}
+
+/* Eliminar flechas de aumentar y disminuir de input Number */
+/* (Chrome, Edge, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Oculta las flechas en Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
