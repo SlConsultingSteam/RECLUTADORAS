@@ -554,11 +554,11 @@
                                             <option value="PASAPORTE">Pasporte</option>
                                         </select>
 
-                                        <label for="inputDocRn">Número de documento</label>
-                                        <input type="number" id="inputDocRn" max="5" name="documento" placeholder="Número documento...">
+                                        <label for="inputDocT4">Número de documento</label>
+                                        <input type="number" id="inputDocT4" max="5" name="documento" placeholder="Número documento...">
 
-                                        <label for="inputAgeRn">Edad</label>
-                                        <input type="number" id="inputAgeRn" name="edad" placeholder="Edad...">
+                                        <label for="inputAgeT4">Edad</label>
+                                        <input type="number" id="inputAgeT4" name="edad" placeholder="Edad...">
 
                                         <label for="genero">Género</label>
                                         <select id="genero" name="genero">
@@ -580,6 +580,30 @@
                                         <input type="number" id="telefono1" name="telefono1" placeholder="Teléfono...1">
                                         <input type="number" id="telefono2" name="telefono2" placeholder="Teléfono...2">
 
+                                        <label for="gestacion">Semanas de gestación</label>
+                                        <input type="number" id="gestacion" name="gestacion" placeholder="Semanas de gestacion..">
+
+                                        <label for="fechaP">Fecha posible parto</label>
+                                        <input type="date" id="fechaP" name="fechaP">
+                                        
+                                        <label for="marca">Usuario (Marca de pañal)</label>
+                                        <input type="text" id="marca" name="marca" placeholder="Marca de pañal..">
+
+                                        <label for="marca">Presentación</label>
+                                        <input type="text" id="marca" name="marca" placeholder="Presentación..">
+
+                                        <label for="generoB">Género del bebé</label>
+                                        <select id="generoB" name="generoB">
+                                            <option disabled value="" selected>Seleccione género del bebé</option>
+                                            <option value="MASCULINO">Masculino</option>
+                                            <option value="FEMENINO">Femenino</option>
+                                        </select>
+
+                                        <label for="peso">Peso del bebé</label>
+                                        <input type="text" id="peso" name="peso" placeholder="Peso de bebé..">
+
+                                        <label for="ciudad">Ciudad</label>
+                                        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad...">
                                     </div>
                                   
                                 </form>
@@ -829,6 +853,41 @@
         }
     });
 
+    // *------------**************-------------------*
+    // Funciónes para T4E0 (46)
+    document.getElementById("inputAgeT4").addEventListener("input", function () {
+        let valor = this.value.replace(/\D/g, ""); // Elimina caracteres no numéricos
+        
+        if (valor.length > 3) valor = valor.slice(0, 3); // Limita a 3 caracteres
+
+        let edadMaxima = 122; // Edad máxima permitida en Colombia
+
+        // Permite que el usuario borre el input sin bloquearlo
+        if (valor !== "" && parseInt(valor) > edadMaxima) {
+            valor = edadMaxima;
+        }
+
+        this.value = valor;
+    });
+    document.getElementById("inputDocT4").addEventListener("input", function () {
+        if (this.value.length > 12) {
+            this.value = this.value.slice(0, 12); // Limita a 12 caracteres
+        }
+    });
+    
+    // Validación del peso del bebé
+    document.getElementById("peso").addEventListener("input", function () {
+        let valor = this.value.replace(/\D/g, ""); // Elimina caracteres no numéricos
+        
+        if (valor !== "") {
+            let peso = parseInt(valor);
+
+            if (peso < 2) peso = 2;  // Mínimo permitido
+            if (peso > 20) peso = 20; // Máximo permitido
+
+            this.value = peso;
+        }
+    });
     </script>
 </body>
 </html>
