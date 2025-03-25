@@ -124,6 +124,38 @@
                             </div>
 
                             <!-- Información proyecto BEBIDA NOCHE NP (3) -->
+                            <div id="info3" class="info-proyecto">
+                                <h3>Información de BEBIDA NOCHE NP (3)</h3>
+                                <div class="bebidanoche" style="text-align: center;" >
+                                    <img src="./img/bebidanoche.png" alt="" >
+                                </div>
+                                <a href="./img/bebidanoche.png" download="bebidanoche.png" class="buttona">
+                                    Descargar imagen
+                                </a>
+                                <label>Infórmele al participante las condiciones y la metodología del estudio: </label>
+                                <ol style="font-weight: bold;"> 
+                                    <li><span style="font-weight: normal;">El estudio es de manera <b>presencial.</b></span>
+                                    <li><span style="font-weight: normal;">Se le solicitará una foto legible donde se evidencie la dirección de residencia con el NSE y este no deberá superar los 2 meses de facturación.</span>
+                                    <li><span style="font-weight: normal;">Se realiza un filtro por parte de la gestora que dura aproximadamente 15 minutos si es efectivo, en caso contrario durara menos. </span>
+                                    <li><span style="font-weight: normal;">La profesional realiza el encuadre que dura aproximadamente 20 minutos. </span>
+                                    <li><span style="font-weight: normal;">Cuando el producto le llega al participante la profesional realiza estatus de recibo que dura aproximadamente 7 minutos. </span>
+                                    <li><span style="font-weight: normal;">Se realiza seguimiento a la aparición del síntoma cada 7 días vía WhatsApp (los días jueves) </span>
+                                    <li><span style="font-weight: normal;">Inicia uso de la primera muestra, realizan evaluación monadica que dura 10 minutos, se programa para entrevista inicial presencial y entrega de segunda muestra. tiempo aproximado de 1 hora y 30 minutos. </span>
+                                    <li><span style="font-weight: normal;">Se realiza seguimiento a la aparición del síntoma cada 7 días vía WhatsApp (los días jueves) </span>
+                                    <li><span style="font-weight: normal;">Inicia uso de la segunda muestra, realizan evaluación monadica que dura 10 minutos, y se agenda acuerdo entre participante y profesional, entrevista final presencial tiempo aproximado 1 hora y 45 minutos. </span>
+                                </ol>
+                                <label>Tener en cuenta que:</label>
+                                <ol style="font-weight: bold;">
+                                    <li><span style="font-weight: normal;">En ninguna de sus publicaciones se deberá incluir nada relacionado con la marca, como lo son el nombre mismo, logos, dibujos, eslogan.</span>
+                                    <li><span style="font-weight: normal;">Es su responsabilidad que todos quienes la apoyen esta labor no utilicen ninguna referencia a la marca.</span>
+                                    <li><span style="font-weight: normal;">A los participantes se les dará un <b>INCENTIVO</b>,no lo podrá publicar.</span>
+                                    <li><span style="font-weight: normal;">No se debe hablar de que recibirá producto como regalo … un regalo no requiere devolución de información, en este tipo de metodología por el contrario es indispensable que nos den información y estar en constante comunicación. </span>
+                                    <li><span style="font-weight: normal;">Todas las personas deberán ser filtradas y/o contactadas por usted, solo deberá hacernos llegar las personas que cumplan con el 100% del perfil solicitado en el archivo adjunto enviado por la gestora. Para esto por favor solicitar la cedula con el fin de que validen si tiene la edad requerida para el estudio.</span>
+                                    <li><span style="font-weight: normal;">Todos los datos deberán ser registrados con la información completa en el archivo adjunto (Excel enviado por la gestora), en este mismo documento usted exigirá la efectividad de los datos por nuestra parte.</span>
+                                    <li><span style="font-weight: normal;">Al interior de La Pipol Opina haremos un filtro más profundo lo que nos permite reservarnos el derecho de inclusión a nuestros estudios y no siempre se podrán dar las razones de negación.</span>
+                                    <li><span style="font-weight: normal;">Si <b>SL RESEARCH COLOMBIA SAS</b> recibe del <b>RECLUTADOR</b> un dato gestionado de un perfil que ya se encuentra en la base de datos de la empresa, este se considerará como un re-contacto. Teniendo en cuenta lo anterior y que hay una gestión por parte de ustedes, este dato se pagará al 50% del valor del reclutamiento siempre y cuando el participante culmine el proceso. La participación debe ser superior a 3 meses; en caso contrario, no se podrá tener en cuenta en el estudio. En caso de que no haya una gestión por parte de la reclutadora, este dato no se pagará.</span>
+                                </ol>
+                            </div>
 
                             <!-- Información proyecto RN (3) -->
                             <div id="info4" class="info-proyecto">
@@ -446,36 +478,66 @@
                                     <div class="form-column">
                                         <h3>Datos Demográficos</h3>
                                         <label for="nombre">Nombre completo</label>
-                                        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo... ">
+                                        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo... " required>
                                         <label for="documento">Número de documento</label>
-                                        <input type="text" id="documento" name="documento" placeholder="Número documento...">
+                                        <input type="number" id="documento" name="documento" placeholder="Número documento..." required>
                                         <label for="edad">Edad</label>
-                                        <input type="text" id="edad" name="edad" placeholder="Edad...">
+                                        <input type="number" id="edad" name="edad" placeholder="Edad..." required>
                                         <label for="genero">Género</label>
-                                        <input type="genero" id="genero" name="genero" placeholder="Género...">
+                                        <input type="genero" id="genero" name="genero" placeholder="Género..." required>
                                         <label for="direccion">Dirección</label>
-                                        <input type="direccion" id="direccion" name="direccion" placeholder="Dirección...">
+                                        <input type="direccion" id="direccion" name="direccion" placeholder="Dirección..." required>
                                         <label for="barrio">Barrio</label>
-                                        <input type="barrio" id="barrio" name="barrio" placeholder="Barrio...">
+                                        <input type="barrio" id="barrio" name="barrio" placeholder="Barrio..." required>
                                         <label for="nse">NSE</label>
-                                        <input type="nse" id="nse" name="nse" placeholder="NSE...">
+                                        <input type="number" id="nse" name="nse" placeholder="NSE..." required>
                                         <label for="telefono">Teléfono</label>
-                                        <input type="telefono1" id="telefono1" name="telefono1" placeholder="Teléfono...">
-                                        <input type="telefono2" id="telefono2" name="telefono2" placeholder="Teléfono...">
+                                        <input type="number" id="telefono1" name="telefono1" placeholder="Teléfono..." required>
+                                        <input type="number" id="telefono2" name="telefono2" placeholder="Teléfono..." required>
                                         <label for="partedol">Parte del cuerpo que presenta dolor</label>
-                                        <input type="partedol" id="partedol" name="partedol" placeholder="Parte...">
+                                        <input type="partedol" id="partedol" name="partedol" placeholder="Parte..." required>
                                         <label for="marcaus">Marca usuaria</label>
-                                        <input type="marcaus" id="marcaus" name="marcaus" placeholder="Marca usuaria...">
+                                        <input type="marcaus" id="marcaus" name="marcaus" placeholder="Marca usuaria..." required>
                                         <label for="presentacion">Presentación</label>
-                                        <input type="presentacion" id="presentacion" name="presentacion" placeholder="Presentación...">
+                                        <input type="presentacion" id="presentacion" name="presentacion" placeholder="Presentación..." required>
                                         <label for="frecuenciaepi">Frecuencia de espisodios presentados en la semana</label>
-                                        <input type="frecuenciaepi" id="frecuenciaepi" name="frecuenciaepi" placeholder="Frecuencia...">
+                                        <input type="frecuenciaepi" id="frecuenciaepi" name="frecuenciaepi" placeholder="Frecuencia..." required>
                                     </div>
                                 </form>
                                 <button type="submit">Registrar Participante</button>
                             </section>
 
                         <!-- Formulario de BEBIDA NOCHE NP (3)  -->
+                        <section id="form3" class="formulario-proyecto">
+                            <h2>FORMULARIO DE REGISTRO BEBIDA NOCHE NP (3)</h2>
+                            <form class="form-container">
+                                <div class="form-column">
+                                    <h3>Datos Demográficos</h3>
+                                    <label for="nombre">Fecha de envío</label>
+                                    <input type="date" id="fechaenvio" name="fechaenvio" placeholder="Fecha de envío... " required>
+                                    <label for="nombre">Nombre completo</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Nombre completo... " required>
+                                    <label for="documento">Número de documento</label>
+                                    <input type="number" id="documento" name="documento" placeholder="Número documento..." required>
+                                    <label for="edad">Edad</label>
+                                    <input type="number" id="edad" name="edad" placeholder="Edad..." required>
+                                    <label for="genero">Género</label>
+                                    <input type="genero" id="genero" name="genero" placeholder="Género..." required>
+                                    <label for="direccion">Dirección</label>
+                                    <input type="direccion" id="direccion" name="direccion" placeholder="Dirección..." required>
+                                    <label for="barrio">Barrio</label>
+                                    <input type="barrio" id="barrio" name="barrio" placeholder="Barrio..." required>
+                                    <label for="nse">NSE</label>
+                                    <input type="number" id="nse" name="nse" placeholder="NSE..." required>
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="number" id="telefono1" name="telefono1" placeholder="Teléfono..." required>
+                                    <input type="number" id="telefono2" name="telefono2" placeholder="Teléfono..." required>
+                                    <label for="marcaus">Marca usuaria</label>
+                                    <input type="marcaus" id="marcaus" name="marcaus" placeholder="Marca usuaria..." required>
+                                </div>
+                            </form>
+                            <button type="submit">Registrar Participante</button>
+                        </section>
 
                         <!-- Formulario de RN (3)  -->
                             <section id="form4" class="formulario-proyecto">

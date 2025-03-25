@@ -31,6 +31,14 @@ header {
 
 }
 
+.bebidanoche img {
+  width: 600px;
+  height: 651px;
+  margin-top: 5px;
+  margin-left: 20px;
+
+}
+
 nav a {
   color: white;
   text-decoration: none;
