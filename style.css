@@ -257,4 +257,5 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Oculta las flechas en Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
